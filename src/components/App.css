@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  min-width: 400px;
+  width: 500px;
   min-height: 600px;
 }
 
@@ -31,4 +31,14 @@
   line-height: 5px;
   font-size: 10px;
   color: gray;
+}
+
+.list-content {
+  width: 450px;
+}
+
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
