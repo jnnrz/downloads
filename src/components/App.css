@@ -34,11 +34,13 @@
 }
 
 .list-content {
-  width: 450px;
+  max-width: 400px;
 }
 
 .truncate {
-  white-space: nowrap;
+  display: block;
+  width: inherit;
   overflow: hidden;
+  white-space: nowrap;
   text-overflow: ellipsis;
 }
