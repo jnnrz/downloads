@@ -24,6 +24,13 @@ function App() {
     chrome.downloads.open(downloadId);
   }
 
+  const removeDownload = (e, downloadId) => {
+    e.preventDefault();
+    chrome.downloads.erase({ id: downloadId }, function (erasedId) {
+      alert("Download #" + erasedId + " has been erased");
+    });
+  }
+
   return (
     <div className="App">
       {downloadItems.length > 0 ? (
@@ -52,7 +59,7 @@ function App() {
                         <div class="btn-group dropleft btn-menu">
                           <button type="button btn-sm" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">menu</button>
                           <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#" onClick={e => removeDownload(e, item.id)}>Remove from list</a>
                           </div>
                         </div>
                       </div>
