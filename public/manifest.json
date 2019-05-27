@@ -12,6 +12,7 @@
   },
   "permissions": [
     "downloads",
+    "downloads.open",
     "storage",
     "tabs",
     "contextMenus",
