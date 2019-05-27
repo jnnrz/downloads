@@ -9,9 +9,15 @@ function App() {
   // Similar to componentDidMount
   useEffect(() => {
     chrome.downloads.search({ exists: true, state: "complete", orderBy: ['-startTime'] }, function (res) {
-      setDownloadItems([...res]);
+      for (let i = 0; i < res.length; i++) {
+        (function (index, download) {
+          chrome.downloads.getFileIcon(index, function (iconURL) {
+            setDownloadItems(state => [...state, { ...download, icon: iconURL }]);
+          });
+        })(res[i].id, res[i])
+      }
     });
-  });
+  }, []);
 
   const openFile = (e, downloadId) => {
     e.preventDefault();
@@ -27,19 +33,21 @@ function App() {
               <li className="nice-list-item">
                 <table>
                   <tr>
-                    <th style={{ width: '100px' }}></th>
+                    <th style={{ width: '40px' }}></th>
                     <th></th>
                   </tr>
                   <tr>
-                    <td></td>
+                    <td className="p-2">
+                      <img src={item.icon} />
+                    </td>
                     <td>
                       <div className="list-main-content d-flex justify-content-between">
-                        <div>
+                        <div className="list-content">
                           <h6 className="m-0">
-                            <a href={item.url}
+                            <a href={item.url} className="truncate"
                               onClick={e => openFile(e, item.id)}>{item.filename.replace(/^.*[\\\/]/, '')}</a>
                           </h6>
-                          <p className="smallp mb-1">{item.filename}</p>
+                          <p className="truncate smallp mb-1">{item.filename}</p>
                         </div>
                         <div class="btn-group dropleft btn-menu">
                           <button type="button btn-sm" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">menu</button>
