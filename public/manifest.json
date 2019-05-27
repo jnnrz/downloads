@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Downloads",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Download manager in a box",
   "browser_action": {
     "default_popup": "index.html"
@@ -13,8 +13,8 @@
   "permissions": [
     "downloads",
     "downloads.open",
+    "downloads.shelf",
     "storage",
-    "tabs",
     "contextMenus",
     "chrome://favicon/"
   ],

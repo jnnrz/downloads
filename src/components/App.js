@@ -27,7 +27,8 @@ function App() {
   const removeDownload = (e, downloadId) => {
     e.preventDefault();
     chrome.downloads.erase({ id: downloadId }, function (erasedId) {
-      alert("Download #" + erasedId + " has been erased");
+      let d = downloadItems.filter((value, index) => value.id !== downloadId);
+      setDownloadItems([...d]);
     });
   }
 
