@@ -4,32 +4,31 @@
   min-height: 600px;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.smallp {
+  color: gray;
+  font-size: 11px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.nice-list {
+  list-style-type: none;
+  text-align: left;
 }
 
-.App-link {
-  color: #61dafb;
+.nice-list-item table {
+  width: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.nice-list-item {
+  border-bottom: 1px solid #cccccc;
+}
+
+.nice-list-item .btn-menu > button {
+  background-color: #dddddd;
+  border: none;
+  border-radius: 2px;
+  padding: 2px 2px 2px 2px;
+  height: 20px;
+  line-height: 5px;
+  font-size: 10px;
+  color: gray;
 }
