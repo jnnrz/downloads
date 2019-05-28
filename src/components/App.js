@@ -18,17 +18,22 @@ function App() {
     });
   }, []);
 
-  const openFile = (e, downloadId) => {
+  function openFile(e, downloadId) {
     e.preventDefault();
     chrome.downloads.open(downloadId);
   }
 
-  const removeDownload = (e, downloadId) => {
+  function removeDownload(e, downloadId) {
     e.preventDefault();
     chrome.downloads.erase({ id: downloadId }, function (erasedId) {
       let d = downloadItems.filter((value, index) => value.id !== downloadId);
       setDownloadItems([...d]);
     });
+  }
+
+  function showFileFolder(e, download) {
+    e.preventDefault();
+    chrome.downloads.show(download);
   }
 
   return (
@@ -56,10 +61,11 @@ function App() {
                           </h6>
                           <p className="truncate smallp mb-1">{item.filename}</p>
                         </div>
-                        <div class="btn-group dropleft btn-menu">
+                        <div className="btn-group dropleft btn-menu">
                           <button type="button btn-sm" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">menu</button>
-                          <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#" onClick={e => removeDownload(e, item.id)}>Remove from list</a>
+                          <div className="dropdown-menu">
+                            <a className="dropdown-item" href="#" onClick={e => removeDownload(e, item.id)}>Remove from list</a>
+                            <a className="dropdown-item" href="#" onClick={e => showFileFolder(e, item.id)}>Show on folder</a>
                           </div>
                         </div>
                       </div>
