@@ -22,15 +22,14 @@
   border-bottom: 1px solid #f7f7f7;
 }
 
-.nice-list-item .btn-menu > button {
-  background-color: #dddddd;
+.nice-list-item .btn-small-custom {
   border: none;
   border-radius: 2px;
   padding: 2px 2px 2px 2px;
   height: 20px;
+  width: 25px;
   line-height: 5px;
   font-size: 10px;
-  color: gray;
 }
 
 .list-content {
@@ -43,4 +42,12 @@
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+
+.bg-aquamarine {
+  background-color: aquamarine;
+}
+
+.bg-d {
+  background-color: #555182;
 }

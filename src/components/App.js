@@ -47,10 +47,11 @@ function App() {
                   <tr>
                     <th style={{ width: '40px' }}></th>
                     <th></th>
+                    <th style={{ width: '40px' }}></th>
                   </tr>
                   <tr>
                     <td className="p-2">
-                      <img src={item.icon} />
+                      <img src={item.icon} alt="" />
                     </td>
                     <td>
                       <div className="list-main-content d-flex justify-content-between">
@@ -61,17 +62,20 @@ function App() {
                           </h6>
                           <p className="truncate smallp mb-1">{item.filename}</p>
                         </div>
-                        <div className="btn-group dropleft btn-menu">
-                          <button type="button btn-sm" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">menu</button>
-                          <div className="dropdown-menu">
-                            <a className="dropdown-item" href="#" onClick={e => removeDownload(e, item.id)}>Remove from list</a>
-                            <a className="dropdown-item" href="#" onClick={e => showFileFolder(e, item.id)}>Show on folder</a>
-                          </div>
-                        </div>
                       </div>
                       <div>
                         <p className="smallp mb-1">{item.fileSize / 1000} KB</p>
                       </div>
+                    </td>
+                    <td>
+                      <div className="d-flex flex-column align-items-center justify-content-between">
+                        <button type="button" className="btn btn-small-custom" onClick={e => showFileFolder(e, item.id)} title="Show on folder">
+                          <span role="img" aria-label="Show">👁</span>
+                        </button>
+                        <button type="button" className="btn btn-small-custom" onClick={e => removeDownload(e, item.id)} title="Remove">
+                          <span role="img" aria-label="Remove">❌</span>
+                        </button>  
+                      </div>                  
                     </td>
                   </tr>
                 </table>
