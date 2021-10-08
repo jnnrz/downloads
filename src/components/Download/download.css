@@ -1,0 +1,73 @@
+.download {
+  display: grid;
+  grid-template-columns: 50px 1fr 30px;
+  padding: 6px;
+  box-sizing: border-box;
+  border-bottom: 1px solid rgb(240, 240, 240);
+}
+
+.download .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.download .main {
+  display: flex;
+  flex-direction: column;
+  padding: 0 6px;
+}
+
+.download .url a {
+  color: rgb(9, 110, 243);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.download .filename {
+  color: gray;
+  font-size: 12px;
+  padding: 3px 0;
+}
+
+.download .size {
+  color: gray;
+  font-weight: 700;
+  font-size: 11px;
+  padding: 3px 0;
+}
+
+.download .actions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.download .actions button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+}
+
+.download .actions button img {
+  display: block;
+  width: 18px;
+  height: 18px;
+}
+
+.download .actions button img:hover {
+  transform: scale(0.95);
+}
+
+.download .truncate {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

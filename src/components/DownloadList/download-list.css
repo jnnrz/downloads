@@ -1,0 +1,25 @@
+.download-list {
+  position: relative;
+  min-height: inherit;
+}
+
+#clr-button-wrapper {
+  position: fixed;
+  right: 40px;
+  bottom: 20px;
+  z-index: 999;
+}
+
+#clr-button {
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+#no-downloads {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: inherit;
+  color: rgb(102, 102, 102);
+  font-weight: 500;
+}

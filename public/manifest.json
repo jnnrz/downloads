@@ -1,14 +1,14 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "Downloads",
-  "version": "1.5.1",
+  "version": "2.0.0",
   "description": "Download manager in a box",
   "icons": {
     "48": "images/icon64.png",
     "64": "images/icon64.png",
     "128": "images/icon128.png"
   },
-  "browser_action": {
+  "action": {
     "default_popup": "index.html",
     "default_icon": {
       "16": "images/down24.png",
@@ -16,18 +16,13 @@
     }
   },
   "background": {
-    "scripts": [
-      "app/background.js"
-    ],
-    "persistent": true
+    "service_worker": "background.js"
   },
   "permissions": [
     "downloads",
     "downloads.open",
     "downloads.shelf",
     "storage",
-    "contextMenus",
-    "chrome://favicon/"
-  ],
-  "content_security_policy": "img-src 'self' data:; script-src 'self' 'sha256-5As4+3YpY62+l38PsxCEkjB1R4YtyktBtRScTJ3fyLU='; object-src 'self'"
+    "contextMenus"
+  ]
 }
